@@ -1,10 +1,32 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <link href=“http://fonts.googleapis.com/css?family=Arvo” rel=“stylesheet” type=“text/css”/>
+    <link href=“http://fonts.googleapis.com/css?family=Bevan” rel=“stylesheet” type=“text/css”/>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'styles/style.css'%}"/>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<div id="wrapper">
+    <div id="header">
+        <div id="logo">
+            <h1>ChatterBox</h1>
+        </div>
+        <div id="menu">
+           {% include 'navbar.html' %}
+        </div>
+    </div>
+    <div id="page">
+        <div id="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+        <br class="clearfix">
+    </div>
+    <br class="clearfix">
+</div>
+
 </body>
 </html>

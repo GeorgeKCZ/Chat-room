@@ -1,10 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'main.html' %}
+
+{% block content %}
+ <h1>{{ room }}</h1>
+  <div class="box">{{ room.description }} </div>
+  <div class="box room__message">
+   <form method="POST">
+    {% csrf_token %}
+    <input name="body" placeholder="Write your message here...."/>
+   </form>
+  </div>
+  {% for message in messages %}
+   <div class="message">{{ message.body }}</div>
+  {% endfor %}
+{% endblock %}
