@@ -14,9 +14,18 @@
         <div id="logo">
             <h1>ChatterBox</h1>
         </div>
-        <div id="menu">
-           {% include 'navbar.html' %}
+        {% if user.is_authenticated %}
+        <div id="search">
+            <form action="/search" method="get">
+                <div>
+                    <input class="tesxt" name="q" size="32" maxlength="64">
+                </div>
+            </form>
         </div>
+        <div id="menu">
+            {% include 'navbar.html' %}
+        </div>
+        {% endif %}
     </div>
     <div id="page">
         <div id="content">

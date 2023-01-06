@@ -26,4 +26,4 @@ class RoomForm(ModelForm):  ##1. Form 2.ModelForm
             validation_error = "Jmeno musí obsahovat min. 2 znaky"
             LOGGER.warning(f'{name}: {validation_error} ')
             raise ValidationError(validation_error)
-        return name
+        return name.capitalize()
